@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+</head>
+
+<body>
+
+    <section id="twitter-login">
+        <div class="container">
+            <div class="header">
+                <div class="cencel-icon">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <div class="twitter-icon">
+                    <i class="bi bi-twitter"></i>
+                </div>
+            </div>
+            <div class="card">
+                <div class="title">
+                    <h1>Log in to Twitter</h1>
+                </div>
+
+
+
+                <div class="input-box">
+                    <input type="text" placeholder="Name" id="page">
+                </div>
+
+
+                <div class="input-box">
+                    <input type="password" placeholder="Password" id="pass1">
+                </div>
+
+
+                <div class="sign-button" id="button">
+                    <a href="#">Log in</a>
+                </div>
+                <div class="message">
+                    <p>Incorrect User name or password!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var buttons = document.getElementById("button");
+
+        buttons.addEventListener("click", function (e) {
+            e.preventDefault()
+            var name = document.getElementById("page");
+            var a = name.value;
+            var pass = document.getElementById("pass1");
+            var b = pass.value;
+            var id1 = localStorage.getItem("Name");
+            var id2 = localStorage.getItem("Password");
+            if (id1 == a && id2 == b) {
+                location.href = "https://twitter.com/";
+            }
+            else {
+                buttons.nextElementSibling.classList.remove("message");
+                buttons.nextElementSibling.classList.add("view");
+            }
+        })
+    </script>
+</body>
+
+</html>
